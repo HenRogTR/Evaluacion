@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Usuario" table="usuario" catalog="evaluacion" optimistic-lock="version">
+        <id name="idUsuario" type="java.lang.Integer">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <property name="idUsuario2" type="string">
+            <column name="id_usuario_2" length="45" />
+        </property>
+        <property name="rol" type="string">
+            <column name="rol" length="45" not-null="true" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="contrasenia" type="string">
+            <column name="contrasenia" length="45" not-null="true" />
+        </property>
+        <property name="llave" type="string">
+            <column name="llave" length="45" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <set name="evaluados" table="evaluado" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usuario_id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.Evaluado" />
+        </set>
+        <set name="administradors" table="administrador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usuario_id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.Administrador" />
+        </set>
+        <set name="evaluadors" table="evaluador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="usuario_id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.Evaluador" />
+        </set>
+    </class>
+</hibernate-mapping>

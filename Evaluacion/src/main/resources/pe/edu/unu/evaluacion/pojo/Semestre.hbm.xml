@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Semestre" table="semestre" catalog="evaluacion" optimistic-lock="version">
+        <id name="idSemestre" type="int">
+            <column name="id_semestre" />
+            <generator class="assigned" />
+        </id>
+        <property name="idSemestre2" type="string">
+            <column name="id_semestre_2" length="45" not-null="true" />
+        </property>
+        <property name="nombreSemestre" type="string">
+            <column name="nombre_semestre" length="45" not-null="true" />
+        </property>
+        <property name="anio" type="string">
+            <column name="anio" length="5" not-null="true" />
+        </property>
+        <property name="periodo" type="string">
+            <column name="periodo" length="5" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="fecha_inicio" length="10" />
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fecha_fin" length="10" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="50" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <set name="encuestas" table="encuesta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="semestre_id_semestre" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.Encuesta" />
+        </set>
+        <set name="semestreCursos" table="semestre_curso" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="semestre_id_semestre" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.SemestreCurso" />
+        </set>
+        <set name="escuelaSemestres" table="escuela_semestre" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="semestre_id_semestre" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EscuelaSemestre" />
+        </set>
+    </class>
+</hibernate-mapping>

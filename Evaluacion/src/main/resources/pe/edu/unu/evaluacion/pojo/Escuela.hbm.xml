@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Escuela" table="escuela" catalog="evaluacion" optimistic-lock="version">
+        <id name="idEscuela" type="java.lang.Integer">
+            <column name="id_escuela" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="facultad" class="pe.edu.unu.evaluacion.pojo.Facultad" fetch="select">
+            <column name="facultad_id_facultad" not-null="true" />
+        </many-to-one>
+        <property name="idEscuela2" type="string">
+            <column name="id_escuela_2" length="45" />
+        </property>
+        <property name="nombreEscuela" type="string">
+            <column name="nombre_escuela" length="200" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="10" />
+        </property>
+        <property name="abreviatura" type="string">
+            <column name="abreviatura" length="10" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <set name="encuestaDetalles" table="encuesta_detalle" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="escuela_id_escuela" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EncuestaDetalle" />
+        </set>
+        <set name="escuelaSemestres" table="escuela_semestre" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="escuela_id_escuela" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EscuelaSemestre" />
+        </set>
+    </class>
+</hibernate-mapping>

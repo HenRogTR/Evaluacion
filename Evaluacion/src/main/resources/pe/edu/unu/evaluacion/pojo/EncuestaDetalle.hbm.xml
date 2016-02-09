@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.EncuestaDetalle" table="encuesta_detalle" catalog="evaluacion" optimistic-lock="version">
+        <id name="idEncuestaDetalle" type="java.lang.Integer">
+            <column name="id_encuesta_detalle" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="curso" class="pe.edu.unu.evaluacion.pojo.Curso" fetch="select">
+            <column name="curso_id_curso" not-null="true" />
+        </many-to-one>
+        <many-to-one name="encuesta" class="pe.edu.unu.evaluacion.pojo.Encuesta" fetch="select">
+            <column name="encuesta_id_encuesta" not-null="true" />
+        </many-to-one>
+        <many-to-one name="escuela" class="pe.edu.unu.evaluacion.pojo.Escuela" fetch="select">
+            <column name="escuela_id_escuela" not-null="true" />
+        </many-to-one>
+        <many-to-one name="evaluado" class="pe.edu.unu.evaluacion.pojo.Evaluado" fetch="select">
+            <column name="evaluado_id_evaluado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="evaluador" class="pe.edu.unu.evaluacion.pojo.Evaluador" fetch="select">
+            <column name="evaluador_id_evaluador" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

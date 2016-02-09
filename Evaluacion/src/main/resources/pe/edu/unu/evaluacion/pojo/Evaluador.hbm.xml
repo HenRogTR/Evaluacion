@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Evaluador" table="evaluador" catalog="evaluacion" optimistic-lock="version">
+        <id name="idEvaluador" type="java.lang.Integer">
+            <column name="id_evaluador" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuario" class="pe.edu.unu.evaluacion.pojo.Usuario" fetch="select">
+            <column name="usuario_id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="idEvaluador2" type="string">
+            <column name="id_evaluador_2" length="45" />
+        </property>
+        <property name="codigoUniversitario" type="string">
+            <column name="codigo_universitario" length="15" unique="true" />
+        </property>
+        <property name="nombres" type="string">
+            <column name="nombres" length="100" not-null="true" />
+        </property>
+        <property name="apellidoPaterno" type="string">
+            <column name="apellido_paterno" length="100" not-null="true" />
+        </property>
+        <property name="apellidoMaterno" type="string">
+            <column name="apellido_materno" length="100" not-null="true" />
+        </property>
+        <property name="sexo" type="java.lang.Boolean">
+            <column name="sexo" />
+        </property>
+        <property name="dni" type="string">
+            <column name="dni" length="12" not-null="true" />
+        </property>
+        <property name="ruc" type="string">
+            <column name="ruc" length="45" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="telefono_fijo" length="12" />
+        </property>
+        <property name="celular" type="string">
+            <column name="celular" length="12" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="tipoDireccion" type="string">
+            <column name="tipo_direccion" length="45" />
+        </property>
+        <property name="direccion" type="string">
+            <column name="direccion" length="200" />
+        </property>
+        <property name="tipoLocalidad" type="string">
+            <column name="tipo_localidad" length="45" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="200" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="referencia" length="200" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <property name="idPersona" type="int">
+            <column name="id_persona" not-null="true" unique="true" />
+        </property>
+        <set name="encuestaDetalles" table="encuesta_detalle" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="evaluador_id_evaluador" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EncuestaDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

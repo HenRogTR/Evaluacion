@@ -1,0 +1,54 @@
+#bd{
+	font-size: 80%;
+}
+
+#dContenedor {
+	padding: 1px 5px 3px 5px;
+    width: 100%;
+    margin: 1px auto;
+}
+
+
+#dCabecera {
+    background: #779e6c;
+    border-bottom: 1px solid #6e8f66;
+    width: 1024px;
+}
+
+#dCabecera .menu{
+    padding: 30px 10px;
+}
+
+.menu {
+    width: 980px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+/*
+#dMenu {
+    background: #779e6c;
+    border-top: 1px solid #8ab47f;
+    width: 100%;
+}
+
+#dPiePagina{
+	background: #779e6c;
+    border-bottom: 1px solid #6e8f66;
+    width: 100%;	
+}
+#dMenu .menu {
+    padding: 15px 10px;
+}
+
+#dCuerpo .menu {
+    padding: 15px 10px;
+}
+
+#dPiePagina .menu {
+    padding: 15px 10px;
+}
+*/

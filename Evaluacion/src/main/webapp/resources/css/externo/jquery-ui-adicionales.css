@@ -1,0 +1,40 @@
+.no-titlebar .ui-dialog-titlebar {
+    display: none;
+}
+
+.pequenio .ui-dialog-titlebar {
+    font-size: 12px;
+}
+
+.pequenio .ui-button-text{
+	font-size: 12px;
+}
+
+.pequenio .ui-dialog-content{
+	font-size: 12px;
+}
+
+.pequenio .ui-dialog-buttonpane{
+	padding: 0px;
+}
+
+
+.pequenio-sin-titulo .ui-dialog-titlebar {
+    display: none;
+}
+
+.pequenio-sin-titulo .ui-button-text{
+	font-size: 12px;
+}
+
+.pequenio-sin-titulo .ui-dialog-content{
+	font-size: 12px;
+}
+
+.pequenio-sin-titulo .ui-dialog-buttonpane{
+	padding: 0px;
+}
+
+.ui-datepicker, .ui-datepicker a{
+ 	font-size:12px;
+}

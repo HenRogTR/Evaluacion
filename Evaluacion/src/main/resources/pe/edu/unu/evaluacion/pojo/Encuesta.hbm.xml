@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Encuesta" table="encuesta" catalog="evaluacion" optimistic-lock="version">
+        <id name="idEncuesta" type="java.lang.Integer">
+            <column name="id_encuesta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="semestre" class="pe.edu.unu.evaluacion.pojo.Semestre" fetch="select">
+            <column name="semestre_id_semestre" not-null="true" />
+        </many-to-one>
+        <set name="encuestaPreguntas" table="encuesta_pregunta" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="encuesta_id_encuesta" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EncuestaPregunta" />
+        </set>
+        <set name="encuestaDetalles" table="encuesta_detalle" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="encuesta_id_encuesta" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EncuestaDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

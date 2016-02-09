@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Facultad" table="facultad" catalog="evaluacion" optimistic-lock="version">
+        <id name="idFacultad" type="java.lang.Integer">
+            <column name="id_facultad" />
+            <generator class="identity" />
+        </id>
+        <property name="idFacultad2" type="string">
+            <column name="id_facultad_2" length="45" />
+        </property>
+        <property name="nombreFacultad" type="string">
+            <column name="nombre_facultad" length="200" not-null="true" />
+        </property>
+        <property name="abreviatura" type="string">
+            <column name="abreviatura" length="10" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="100" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <set name="escuelas" table="escuela" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="facultad_id_facultad" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.Escuela" />
+        </set>
+    </class>
+</hibernate-mapping>

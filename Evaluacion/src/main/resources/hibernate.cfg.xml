@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+                                            "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/evaluacion?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.c3p0.min_size">10</property>
+    <property name="hibernate.c3p0.max_size">50</property>
+    <property name="hibernate.c3p0.acquire_increment">1</property>
+    <property name="hibernate.c3p0.idle_test_period">3000</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.timeout">1800</property>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Administrador.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Evaluador.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/PersonaHistorial.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Facultad.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/EncuestaPregunta.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Escuela.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Evaluado.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/EscuelaSemestre.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Encuesta.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Curso.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Usuario.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/EncuestaDetalle.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/SemestreCurso.hbm.xml"/>
+    <mapping resource="pe/edu/unu/evaluacion/pojo/Semestre.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="evaluacion"/>
+  <table-filter match-name="semestre_curso"/>
+  <table-filter match-name="administrador"/>
+  <table-filter match-name="escuela_semestre"/>
+  <table-filter match-name="encuesta_pregunta"/>
+  <table-filter match-name="encuesta_detalle"/>
+  <table-filter match-name="semestre"/>
+  <table-filter match-name="escuela"/>
+  <table-filter match-name="encuesta"/>
+  <table-filter match-name="curso"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="evaluador"/>
+  <table-filter match-name="facultad"/>
+  <table-filter match-name="evaluado"/>
+  <table-filter match-name="persona_historial"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.SemestreCurso" table="semestre_curso" catalog="evaluacion" optimistic-lock="version">
+        <composite-id name="id" class="pe.edu.unu.evaluacion.pojo.SemestreCursoId">
+            <key-property name="semestreIdSemestre" type="int">
+                <column name="semestre_id_semestre" />
+            </key-property>
+            <key-property name="cursoIdCurso" type="int">
+                <column name="curso_id_curso" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="curso" class="pe.edu.unu.evaluacion.pojo.Curso" update="false" insert="false" fetch="select">
+            <column name="curso_id_curso" not-null="true" />
+        </many-to-one>
+        <many-to-one name="semestre" class="pe.edu.unu.evaluacion.pojo.Semestre" update="false" insert="false" fetch="select">
+            <column name="semestre_id_semestre" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

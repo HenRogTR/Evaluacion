@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 08/02/2016 11:38:31 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.edu.unu.evaluacion.pojo.Curso" table="curso" catalog="evaluacion" optimistic-lock="version">
+        <id name="idCurso" type="java.lang.Integer">
+            <column name="id_curso" />
+            <generator class="identity" />
+        </id>
+        <property name="idCurso2" type="string">
+            <column name="id_curso_2" length="45" />
+        </property>
+        <property name="codigoCurso" type="string">
+            <column name="codigo_curso" length="10" not-null="true" />
+        </property>
+        <property name="nombreCurso" type="string">
+            <column name="nombre_curso" length="200" not-null="true" />
+        </property>
+        <property name="nombreCursoAbreviado" type="string">
+            <column name="nombre_curso_abreviado" length="45" />
+        </property>
+        <property name="registro" type="string">
+            <column name="registro" length="65535" not-null="true" />
+        </property>
+        <set name="semestreCursos" table="semestre_curso" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="curso_id_curso" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.SemestreCurso" />
+        </set>
+        <set name="encuestaDetalles" table="encuesta_detalle" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="curso_id_curso" not-null="true" />
+            </key>
+            <one-to-many class="pe.edu.unu.evaluacion.pojo.EncuestaDetalle" />
+        </set>
+    </class>
+</hibernate-mapping>

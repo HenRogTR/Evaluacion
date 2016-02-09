@@ -1,0 +1,176 @@
+
+#dContenedor {
+	padding: 1px 5px 3px 5px;
+    width: 1024px;
+    margin: 1px auto;
+}
+
+
+#dCabecera {
+    background: #779e6c;
+    border-bottom: 1px solid #6e8f66;
+    width: 100%;
+}
+
+#dMenu {
+    background: #779e6c;
+    border-top: 1px solid #8ab47f;
+    width: 100%;
+}
+
+#dPiePagina{
+	background: #779e6c;
+    border-bottom: 1px solid #6e8f66;
+    width: 100%;
+}
+
+#dCabecera .menu{
+    padding: 2px 2px;
+}
+
+#dMenu .menu {
+    padding: 10px 10px;
+}
+
+#dCuerpo .menu {
+    padding: 15px 10px;
+    min-height: 420px;
+}
+
+#dPiePagina .menu {
+    padding: 15px 10px;
+}
+
+.menu {
+    width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+h1.logo{
+	margin: 3px;
+}
+
+h1.logo a {
+    background-image: url(../img/logo.png);
+}
+
+
+h1.logo a {
+    background: url(../img/logo.png) no-repeat left;
+    display: block;
+    width: 400px;
+    height: 85px;
+}
+
+div.dLogo{
+	float: left;
+}
+
+div.dLogin{
+	float: right;
+	padding: 20px 0px;
+}
+
+div.dUsuario{
+	float: right;
+	padding-bottom: 10px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	
+	position: relative;
+    top: 60px;
+    right: 10px;
+}
+
+.ocultar{
+	display: none;
+}
+
+#dMenu.menu-fixed{	
+    position: fixed;
+	width: 1024px;
+    top: 0px;
+    z-index: 1;
+}
+
+.inicioOculto{
+	display: none;
+}
+
+.manoClic{
+    cursor: pointer;
+}
+
+.tabla_temporal{
+/*     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; */
+/*     font-size: 12px; */
+    text-align: left;
+    border-collapse: collapse;
+}
+.tabla_temporal thead tr th{
+    text-align: center;
+}
+.tabla_temporal tfoot tr th{text-align: right;}
+.tabla_temporal th{
+    padding: 4px;
+    font-weight: bold;
+    color: #779e6c;
+    background: #fff;
+    border: 1px solid #779e6c;
+}
+.tabla_temporal tbody tr th{
+    text-align: right;
+    padding-right: 8px;
+}
+.tabla_temporal td{
+    padding: 4px;
+    background: #fff;
+    border-top: 1px solid #779e6c;
+    color: #000;
+    border: 1px dashed #779e6c;
+}
+
+.resaltar tbody tr:hover td{background: #d0dafd;}
+
+
+.anchoTotal{
+	width: 100%;
+}
+	
+.contenedorEntrada{
+	padding-right: 15px !important;
+}
+
+.altoTotal{height: 100%;}
+
+.ancho1{
+	width: 100px;
+}
+
+.ancho1_5{
+	width: 150px;
+}
+.ancho2{
+	width: 200px;
+}
+
+.ancho3{
+	width: 300px;
+}
+
+.div_error{
+	padding-top:10px;
+}
+
+.div_error label.error{
+	display: block;
+	color: red;
+	font-style: italic;
+}
+
+textarea.error, input.error, select.error{
+	border: 1px dotted red;
+}
